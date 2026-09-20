@@ -20,11 +20,17 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Android SDK hazırla
-        uses: android-actions/setup-android@v3
-
-      - name: Android 35 platformunu kur
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Android SDK 35 hazırla
+        shell: bash
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          SDKMANAGER="$(command -v sdkmanager || true)"
+          if [ -z "$SDKMANAGER" ]; then
+            SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          fi
+          "$SDKMANAGER" --version
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
       - name: Gradle 8.9 kur
         uses: gradle/actions/setup-gradle@v4
