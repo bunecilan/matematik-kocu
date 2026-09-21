@@ -1,47 +1,49 @@
-# Matematik Koçu V2
+# Matematik Akademi — Flutter Android
 
-Sıfırdan ileri seviyeye matematik öğretmek için hazırlanmış, Türkçe, modern ve internetsiz çalışabilen Android uygulaması.
+Matematik Akademi; matematiği sevmeyen veya temelden başlamak isteyen kişilere Türkçe, görsel ve oyunlaştırılmış biçimde matematik öğretmek için hazırlanmış Flutter uygulamasıdır.
 
-## V2'de neler var?
+## Neler var?
 
-- 23 ana konu: sayılar ve dört işlemden türev, integral, matris ve karmaşık sayılara kadar.
-- "Mala anlatır gibi" katmanlı anlatım: günlük hayat benzetmesi, tek kural, adım adım örnek, **Daha da basit anlat** kartı.
-- Android Text-to-Speech ile **sesli konu anlatımı**.
-- Parametreli soru üretici: konu, zorluk ve rastgele sayılara göre **1000'den çok farklı soru varyasyonu** üretme kapasitesi.
-- Kolay / Orta / Zor / Adaptif zorluk.
-- Kullanıcının konu bazında doğru-yanlış geçmişine göre adaptif seviye.
-- Akıllı tekrar: en fazla hata yapılan konular otomatik öne çıkar.
-- Yanlışlar Defteri ve "Öğrendim" ile tekrar havuzundan çıkarma.
-- Favori sorular.
-- Günlük seri (streak), XP, doğruluk oranı ve başarı rozetleri.
-- TYT / AYT tarzı süreli deneme modu. (Resmî ÖSYM sorularının kopyası değildir.)
-- Fonksiyon Grafik Laboratuvarı: doğrusal fonksiyon ve parabol katsayılarını canlı değiştir.
-- Hareketli Geometri: üçgen, dikdörtgen ve daireyi görsel/formül bağlantısıyla öğren.
-- Parmakla çizilebilen karalama alanı + hızlı hesap makinesi.
-- Konu arama ve seviye filtresi.
-- Öğrenme ilerlemesi cihazda yerel olarak saklanır.
-- Üyelik ve sunucu gerektirmez.
+- 9. sınıf seviyesinden ileri matematiğe kadar konu ağacı
+- Her ders için 7 adımlı öğretim düzeni
+- İlk 3 temel konuda ayrıntılı tam ders
+- JSON içinde 4.000 soruluk soru bankası
+- Kolay / Orta / Zor / Çok Zor dağılımı
+- Pratik, TYT, AYT, konu sınavı ve tekrar modları
+- XP, seviye, günlük seri ve rozetler
+- Yanlışlar defteri ve favori sorular
+- İstatistik grafikleri
+- Grafik çizici
+- Parmakla karalama alanı
+- Geometri laboratuvarı
+- Türkçe TTS sesli anlatım
 
-## Bilgisayara program kurmadan APK oluşturma
+## GitHub'a yükleme — sıfır bilgi düzeyi
 
-1. Bu projenin **içindeki tüm dosya ve klasörleri** GitHub'da yeni bir repository'ye yükle. `.github` klasörünün de yüklendiğinden emin ol.
-2. GitHub repository sayfasında **Actions** sekmesine gir.
-3. `Android APK Oluştur` iş akışını aç. Push sonrasında otomatik başlayabilir; istersen `Run workflow` ile elle de başlatabilirsin.
-4. İşlem yeşil tik olduğunda çalışmayı aç.
-5. Sayfanın altındaki **Artifacts** bölümünden `MatematikKocu-V2-APK` paketini indir.
-6. ZIP'i aç. İçindeki `app-debug.apk` dosyasını Android telefona gönderip kur.
+Bu depo zaten GitHub'daysa sadece dosyaları değiştirip Commit changes demen yeterlidir.
 
-> Telefonda Google Play dışından APK kurarken Android, kullandığın tarayıcı/dosya yöneticisi için "Bilinmeyen uygulama yükleme" izni isteyebilir.
+Yeni bir depoda kullanacaksan:
+1. GitHub'da New repository ile boş bir depo oluştur.
+2. Bu projenin bütün dosyalarını depoya yükle.
+3. Commit changes düğmesine bas.
+4. Üst menüden Actions bölümüne gir.
+5. Flutter APK Oluştur iş akışını aç.
+6. Yeşil tik oluşunca iş akışını aç ve Artifacts bölümündeki MatematikAkademi-APK dosyasını indir.
 
-## Teknik yapı
+## APK'yı telefona kurma
 
-- Kotlin
-- Jetpack Compose + Material 3
-- Android minSdk 24 / targetSdk 35
-- Harici sunucu yok
-- İlerleme: SharedPreferences
-- APK derleme: GitHub Actions + Gradle 8.9 + Java 17
+En kolay APK:
+- MatematikAkademi-universal.apk
 
-## Önemli
+Dosyayı Android telefona gönder, aç ve gerekirse kullandığın dosya yöneticisi için “Bilinmeyen uygulama yükleme” izni ver.
 
-Uygulama eğitim/pratik amaçlıdır. TYT/AYT modu sınav tarzı çalışma sağlar; ÖSYM ile bağlantılı değildir ve resmî soru bankası değildir.
+## Otomatik build
+
+.github/workflows/build-flutter-apk.yml:
+- Flutter stable kurar
+- flutter pub get çalıştırır
+- flutter analyze çalıştırır
+- universal release APK üretir
+- ABI bazlı APK'ları üretir
+- Artifacts alanına yükler
+- Her başarılı build için GitHub Releases alanına APK'ları otomatik ekler

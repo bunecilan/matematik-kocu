@@ -1,0 +1,74 @@
+name: Flutter APK Oluştur
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "flutter_app/**"
+      - ".github/workflows/build-flutter-apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Flutter stable kur
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Android Flutter iskeletini oluştur
+        run: |
+          rm -rf build_app
+          flutter create --platforms=android --project-name matematik_akademi --org com.matematikakademi build_app
+          cp flutter_app/pubspec.yaml build_app/pubspec.yaml
+          rm -rf build_app/lib build_app/assets
+          cp -r flutter_app/lib build_app/lib
+          cp -r flutter_app/assets build_app/assets
+          sed -i 's/android:label="matematik_akademi"/android:label="Matematik Akademi"/' build_app/android/app/src/main/AndroidManifest.xml
+          if grep -q "minSdk = flutter.minSdkVersion" build_app/android/app/build.gradle.kts; then
+            sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 21/' build_app/android/app/build.gradle.kts
+          fi
+
+      - name: Paketleri indir
+        working-directory: build_app
+        run: flutter pub get
+
+      - name: Kod analizi
+        working-directory: build_app
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Universal release APK
+        working-directory: build_app
+        run: |
+          flutter build apk --release
+          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/MatematikAkademi-universal.apk
+
+      - name: ABI bazlı APK'lar
+        working-directory: build_app
+        run: flutter build apk --release --split-per-abi
+
+      - name: APK artifact yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: MatematikAkademi-APK
+          path: |
+            build_app/build/app/outputs/flutter-apk/MatematikAkademi-universal.apk
+            build_app/build/app/outputs/flutter-apk/app-*-release.apk
+
+      - name: GitHub Release oluştur
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Matematik Akademi APK #${{ github.run_number }}
+          generate_release_notes: true
+          files: |
+            build_app/build/app/outputs/flutter-apk/MatematikAkademi-universal.apk
+            build_app/build/app/outputs/flutter-apk/app-*-release.apk
