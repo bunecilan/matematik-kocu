@@ -688,19 +688,87 @@ LessonBlueprint blueprintFor(Topic t) {
 List<LessonStep> lessonFor(Topic t) {
   final b = blueprintFor(t);
   return [
-    LessonStep('1 — Nerede Kullanılır?', b.useCase, '🌍'),
-    LessonStep('2 — Temel Mantık ve Tanımlar', b.concept, '🧠'),
-    LessonStep('3 — Kurallar ve Formüller', b.rules, '📐'),
-    LessonStep('4 — Görselle Anlayalım', b.visual, '🎨'),
-    LessonStep('5 — Örnek 1 · Yöntem A', b.example1A, '🪜'),
-    LessonStep('6 — Aynı Örnek · Yöntem B', b.example1B, '🔁'),
-    LessonStep('7 — Örnek 2 · Adım Adım', b.example2, '✍️'),
-    LessonStep('8 — Örnek 3 · Pekiştirme', b.example3, '🧩'),
-    LessonStep('9 — Sık Yapılan Hatalar', b.pitfalls, '⚠️'),
-    LessonStep('10 — Mini Özet ve Kontrol', b.recap, '✅'),
+    LessonStep(
+      '1 — Bu Konu Neden Var?',
+      b.useCase +
+          '\n\nBu derste yalnızca formül ezberlemeyeceğiz. Önce problemin ne anlattığını anlayacağız, sonra matematik diline çevireceğiz. Her yeni kuralı bir örnek üzerinde neden çalıştığıyla birlikte göreceksin.',
+      '🌍',
+    ),
+    LessonStep(
+      '2 — Temelden Başlayalım',
+      b.concept +
+          '\n\nKendine şu üç soruyu sor:\n• Elimde hangi bilgiler var?\n• Benden ne isteniyor?\n• Verilenlerle istenen arasında hangi ilişki var?\n\nBu üç soruya cevap vermeden işlem yapmaya başlama. Matematikte doğru yöntem çoğu zaman soruyu doğru okumaktan çıkar.',
+      '🧠',
+    ),
+    LessonStep(
+      '3 — Mantığını Gör',
+      b.visual +
+          '\n\nŞimdi formülü bir kenara bırakıp ilişkiye odaklan. Bir sayı, şekil veya değişken değiştiğinde diğerinin ne yaptığına bak. Böylece ezber yerine neden-sonuç ilişkisi kurarsın.',
+      '👀',
+    ),
+    LessonStep(
+      '4 — Kurallar ve Formüller',
+      b.rules +
+          '\n\nKuralı kullanmadan önce koşullarını kontrol et. İşaret, parantez, payda, tanım aralığı, birim ve özel durumlar sınavlarda en çok hata yapılan yerlerdir.',
+      '📐',
+    ),
+    LessonStep(
+      '5 — Çözümlü Örnek 1 · Yöntem A',
+      b.example1A +
+          '\n\nÇözüm kontrolü:\n1) Verilenleri kullandık mı?\n2) Her adım bir önceki adımdan mantıklı biçimde çıktı mı?\n3) Sonuç sorunun istediği türde mi?',
+      '🪜',
+    ),
+    LessonStep(
+      '6 — Aynı Soru · Yöntem B',
+      b.example1B +
+          '\n\nNeden ikinci yöntem? Çünkü sınavda tek bir yolu bilmek bazen yetmez. Bir yöntem uzun gelirse diğerine geçebilmelisin. İki yöntemin ortak fikrini bulmaya çalış; asıl öğrenmen gereken yer orasıdır.',
+      '🔁',
+    ),
+    LessonStep(
+      '7 — İki Yöntemi Karşılaştır',
+      'Yöntem A ile Yöntem B aynı sonuca ulaşıyor fakat düşünme yolları farklı olabilir.\n\n• Hangisi daha kısa?\n• Hangisi daha anlaşılır?\n• Hangi bilgi verildiğinde hangi yöntem avantajlı?\n\nSınavda amaç her zaman en uzun çözümü yapmak değil; güvenli ve hızlı yöntemi seçmektir.',
+      '⚖️',
+    ),
+    LessonStep(
+      '8 — Çözümlü Örnek 2 · Adım Adım',
+      b.example2 +
+          '\n\nBurada ne yaptık? Önce soru tipini tanıdık, sonra uygun kuralı seçtik, işlemleri küçük parçalara böldük ve sonucu kontrol ettik. Bir adımı zihinden atlamak yerine özellikle ilk öğrenirken yaz.',
+      '✍️',
+    ),
+    LessonStep(
+      '9 — Çözümlü Örnek 3 · Biraz Daha Zor',
+      b.example3 +
+          '\n\nBu örnekte amaç yalnızca cevabı bulmak değil, hangi ipucunun hangi yöntemi çağırdığını fark etmektir. Sorudaki anahtar kelimeleri ve verilen özel bilgileri işaretle.',
+      '🧩',
+    ),
+    LessonStep(
+      '10 — Soru Çözerken Uygulayacağın Plan',
+      'Her soruda şu sırayı uygula:\n'
+          '1) Soruyu bir kez sadece anlamak için oku.\n'
+          '2) Verilenleri ve isteneni ayır.\n'
+          '3) Konuyu ve soru tipini belirle.\n'
+          '4) En kısa güvenilir yöntemi seç.\n'
+          '5) İşlemleri satır satır yap.\n'
+          '6) İşaret, parantez ve birim kontrolü yap.\n'
+          '7) Sonucun mantıklı olup olmadığını kontrol et.\n\n'
+          'Bu planı alışkanlık haline getirirsen zor sorularda bile nereden başlayacağını bilirsin.',
+      '🗺️',
+    ),
+    LessonStep(
+      '11 — Sık Yapılan Hatalar',
+      b.pitfalls +
+          '\n\nBir soruyu yanlış yaptığında sadece doğru cevaba bakma. Yanlışın sebebini seç: konuyu bilmeme, kuralı karıştırma, işlem hatası, soruyu yanlış okuma veya acele. Uygulama sonraki alıştırmalarda buna göre tekrar önerecek.',
+      '⚠️',
+    ),
+    LessonStep(
+      '12 — Mini Özet',
+      b.recap +
+          '\n\nKendini kontrol et:\n• Konuyu kendi cümlenle açıklayabiliyor musun?\n• En önemli kuralı neden kullandığını söyleyebiliyor musun?\n• Çözümlü örneği kapatıp yeniden çözebilir misin?\n\nBu üçüne de evet diyorsan soru çözme aşamasına geç.',
+      '✅',
+    ),
     const LessonStep(
-      '11 — Şimdi Sen Çöz',
-      'Konu anlatımı ve çözümlü örnekler tamamlandı. Şimdi 5 soru çözeceksin. Sorular kolaydan zora ilerleyecek. Yanlışta önce tekrar dene, sonra ipucu al, en son adım adım çözümü aç. 5 soruyu tamamlayınca konu bitmiş sayılacak.',
+      '13 — Şimdi Senin Sıran',
+      'Konu anlatımı tamamlandı. Önünde kolaydan zora giden 5 kontrollü soru var. İlk sorular doğrudan temel mantığı, sonraki sorular ise yorum ve yöntem seçimini ölçecek.\n\nYanlış yaptığında sistem cevabı hemen göstermeyecek:\n1) Tekrar Dene\n2) İpucu Al\n3) Adım Adım Çözümü Gör\n\nAmaç cevabı ezberlemek değil, aynı tip soruyu bir daha gördüğünde kendi başına çözebilmek.',
       '🎯',
     ),
   ];
