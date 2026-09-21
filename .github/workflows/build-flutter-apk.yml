@@ -29,7 +29,7 @@ jobs:
           rm -rf build_app
           flutter create --platforms=android --project-name matematik_akademi --org com.matematikakademi build_app
           cp flutter_app/pubspec.yaml build_app/pubspec.yaml
-          rm -rf build_app/lib build_app/assets
+          rm -rf build_app/lib build_app/assets build_app/test
           cp -r flutter_app/lib build_app/lib
           cp -r flutter_app/assets build_app/assets
           sed -i 's/android:label="matematik_akademi"/android:label="Matematik Akademi"/' build_app/android/app/src/main/AndroidManifest.xml
