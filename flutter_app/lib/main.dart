@@ -121,49 +121,588 @@ const topics = <Topic>[
   Topic('15','15. İLERİ MATEMATİK','İleri İstatistik ve Olasılık','Dağılımlar ve çıkarım',['6.1','6.3']),
 ];
 
-List<LessonStep> lessonFor(Topic t) {
-  if (t.id == '1.1') {
-    return const [
-      LessonStep('1 — Bu Ne İşe Yarar?','🛒 Markette 3 ürün sayarken doğal sayıları kullanırsın.\n🌡️ Hava eksi 4 derece olduğunda tam sayılar devreye girer.\n🍕 Bir pizzanın yarısını anlatırken rasyonel sayılar gerekir.\n\nKısa hikâye: Deniz’in cebinde 5 lira vardı, 8 lira borç aldı ve pizzanın yarısını yedi. Tek bir günde üç sayı ailesiyle karşılaştı.','💡'),
-      LessonStep('2 — En Basit Hali','Doğal sayılar saymak için kullandığın sıfırdan başlayan sayılardır. Tam sayılar bunlara eksi değerleri de ekler. Rasyonel sayılar ise bir bütünün parçalarını anlatabilen sayılardır.','🧠'),
-      LessonStep('3 — Görselle Anlayalım','Sayı doğrusunu bir cadde gibi düşün. Sağ tarafa gittikçe sayı büyür, sola gittikçe küçülür. Sıfır ortadaki buluşma noktasıdır. Aşağıdaki görselde noktayı sürükleyerek sayıların yerini zihninde canlandır.','🎨'),
-      LessonStep('4 — Adım Adım Çözüm','Örnek: Eksi üç ile iki arasındaki tam sayıları bulalım.\n\n1. Sayı doğrusunda eksi üçü bul.\nBurada ne yaptık? Başlangıç sınırını belirledik.\n\n2. İkiye doğru sağa ilerle.\nBurada ne yaptık? Sayıları küçükten büyüğe sıraladık.\n\n3. Arada eksi iki, eksi bir, sıfır ve bir vardır.\nBurada ne yaptık? Uçları almadan aradaki tam sayıları yazdık.','🪜'),
-      LessonStep('5 — Peki Ya Şimdi?','Soru: Eksi iki mi, eksi beş mi daha büyüktür?\n\n⚠️ Çoğu kişi burada hata yapar: “Beş daha büyük, o hâlde eksi beş büyüktür.”\n\nYanlış yol: Eksi işaretini görmezden gelmek.\nDoğru yol: Sayı doğrusunda sağda olan daha büyüktür. Eksi iki, eksi beşin sağındadır.','⚠️'),
-      LessonStep('6 — Senin Sıran','Üç soru çözeceksin: kolay, orta ve zor. Yanlışta önce tekrar dene, sonra ipucu al, en son adım adım çözümü aç.','🎯'),
-      LessonStep('7 — Bunu Biliyor muydun?','Sıfırın bir sayı olarak sistemli biçimde kullanılması matematik tarihinde büyük bir dönüm noktasıdır. Hint matematik geleneğinde gelişen sıfır fikri, daha sonra İslam dünyası üzerinden Avrupa’ya yayılmıştır.','🏛️'),
-    ];
-  }
-  if (t.id == '1.2') {
-    return const [
-      LessonStep('1 — Bu Ne İşe Yarar?','📍 Bir yere ne kadar uzakta olduğunu söylerken yön değil mesafe önemlidir.\n💳 Borcun büyüklüğünü konuşurken eksi işareti değil miktar önemlidir.\n🌡️ Sıfır dereceden kaç derece uzakta olduğunu hesaplarken kullanılır.','💡'),
-      LessonStep('2 — En Basit Hali','Mutlak değer, bir sayının sıfıra olan uzaklığıdır. Uzaklık negatif olamayacağı için sonuç da negatif olmaz.','🧠'),
-      LessonStep('3 — Görselle Anlayalım','Sıfırdan sağa üç adım ile sıfırdan sola üç adım aynı mesafedir. Bu yüzden üç ile eksi üçün mutlak değeri aynıdır.','🎨'),
-      LessonStep('4 — Adım Adım Çözüm','Örnek: Mutlak değeri beş olan sayıları bulalım.\n\n1. Sıfırı merkeze al.\nBurada ne yaptık? Mesafenin başlangıcını seçtik.\n\n2. Sağda beş adım git: beş.\n3. Solda beş adım git: eksi beş.\n\nSonuç: İki sayı vardır.','🪜'),
-      LessonStep('5 — Peki Ya Şimdi?','⚠️ Hata: “Mutlak değer içindeki eksi her zaman artıya döner.”\nBu cümle tek başına yeterli değildir. İçeride işlem varsa önce içeriyi hesaplamak gerekir.\n\nÖrneğin bir sayıdan beş çıkarınca sonuç pozitif de negatif de olabilir; mutlak değer sonucun sıfıra uzaklığını alır.','⚠️'),
-      LessonStep('6 — Senin Sıran','Kolay, orta ve zor üç mutlak değer sorusuna geç. Yanlış yaptığında uygulama ipucu ve çözüm yolunu gösterecek.','🎯'),
-      LessonStep('7 — Bunu Biliyor muydun?','Mutlak değer yalnızca okul matematiğinde değil, veri biliminde hata miktarını ve uzaklık ölçülerini tanımlarken de kullanılır.','🏛️'),
-    ];
-  }
-  if (t.id == '1.3') {
-    return const [
-      LessonStep('1 — Bu Ne İşe Yarar?','🦠 Çok hızlı çoğalan canlıları anlatırken,\n💾 bilgisayardaki ikinin kuvvetlerinde,\n📈 bileşik büyüme hesaplarında üsler hayat kurtarır.','💡'),
-      LessonStep('2 — En Basit Hali','Üslü sayı, aynı sayıyı tekrar tekrar çarpmanın kısa yoludur. Örneğin iki sayısını üç kez kendisiyle çarpmak yerine “ikinin üçüncü kuvveti” dersin.','🧠'),
-      LessonStep('3 — Görselle Anlayalım','Bir kareyi iki kat, sonra tekrar iki kat, sonra tekrar iki kat büyüttüğünü düşün. Her adımda tekrar eden çarpma vardır. Üs, kaç tekrar olduğunu söyler.','🎨'),
-      LessonStep('4 — Adım Adım Çözüm','Örnek: İkinin dördüncü kuvveti.\n1. Taban iki.\n2. Üs dört, yani dört tane iki çarpılacak.\n3. İki çarpı iki dört, dört çarpı iki sekiz, sekiz çarpı iki on altı.\nBurada ne yaptık? Üs ifadesini tekrarlı çarpıma çevirdik.','🪜'),
-      LessonStep('5 — Peki Ya Şimdi?','⚠️ Çok yapılan hata: İkinin üçüncü kuvvetini iki çarpı üç sanmak.\nYanlış sonuç altıdır.\nDoğru düşünce: iki çarpı iki çarpı iki; sonuç sekizdir.\nNegatif üs ise sayının tersini almaya götürür.','⚠️'),
-      LessonStep('6 — Senin Sıran','Üç soru: temel kuvvet, aynı tabanlı çarpım ve negatif üs. İstersen ipucuyla ilerle.','🎯'),
-      LessonStep('7 — Bunu Biliyor muydun?','Üstel gösterim astronomide çok büyük, mikroskobik bilimlerde ise çok küçük sayıları okunabilir biçimde yazmak için bilimsel gösterimin temelidir.','🏛️'),
-    ];
-  }
+class LessonBlueprint {
+  final String useCase;
+  final String concept;
+  final String rules;
+  final String visual;
+  final String example1A;
+  final String example1B;
+  final String example2;
+  final String example3;
+  final String pitfalls;
+  final String recap;
 
+  const LessonBlueprint({
+    required this.useCase,
+    required this.concept,
+    required this.rules,
+    required this.visual,
+    required this.example1A,
+    required this.example1B,
+    required this.example2,
+    required this.example3,
+    required this.pitfalls,
+    required this.recap,
+  });
+}
+
+LessonBlueprint blueprintFor(Topic t) {
+  switch (t.id) {
+    case "7":
+      return const LessonBlueprint(
+        useCase: "Deprem, pH, ses ve üstel büyüme ölçeklerinde logaritma büyük aralıkları yönetir.",
+        concept: "Logaritma üstel işlemin tersidir: logₐb=c ⇔ aᶜ=b.",
+        rules: "log(xy)=logx+logy; log(x/y)=logx−logy; log(xᵏ)=klogx. Log içi >0, taban >0 ve ≠1.",
+        visual: "y=2ˣ ile y=log₂x, y=x doğrusuna göre birbirinin ters/yansıma grafikleridir.",
+        example1A: "log₂32.\nYöntem A: 2ˣ=32=2⁵ → 5.",
+        example1B: "Aynı — Yöntem B: 32’yi 2’ye beş kez bölüp 1’e ulaşırsın → üs 5.",
+        example2: "log₁₀1000+log₁₀0,1 =3+(−1)=2.",
+        example3: "log₂x=3 → x=2³=8.",
+        pitfalls: "log(x+y)=logx+logy değildir. Log içi pozitif olmalıdır.",
+        recap: "Özet: logaritmayı 'tabanı hangi kuvvete yükseltirsem?' diye oku.",
+      );
+    case "8":
+      return const LessonBlueprint(
+        useCase: "Düzenli artan ödemeler, tasarruf ve büyüme örüntüleri dizilerle modellenir.",
+        concept: "Aritmetik dizide fark sabit; geometrik dizide oran sabittir.",
+        rules: "Aritmetik aₙ=a₁+(n−1)d. Geometrik aₙ=a₁rⁿ⁻¹. Aritmetik toplam n(a₁+aₙ)/2.",
+        visual: "2,5,8,11 her adım +3; 2,6,18,54 her adım ×3.",
+        example1A: "2,5,8,... 10. terim.\nYöntem A: 2+9·3=29.",
+        example1B: "Aynı — Yöntem B: 1’den 10’a 9 geçiş var; her geçiş +3 → 29.",
+        example2: "3,6,12,24,... 6. terim: 3·2⁵=96.",
+        example3: "1,4,7,10,13 toplam: 5(1+13)/2=35.",
+        pitfalls: "n. terimde n−1 geçiş vardır. Fark ve oranı karıştırma.",
+        recap: "Özet: önce ardışık fark/oranı kontrol et, sonra uygun terim/toplam formülünü seç.",
+      );
+    case "9":
+      return const LessonBlueprint(
+        useCase: "Türev ve integralin temeli olan limit, bir fonksiyonun bir noktaya yaklaşırken davranışını inceler.",
+        concept: "lim x→a f(x), x a’ya yaklaşırken f(x)’in yaklaştığı değerdir. Noktada tanımlı olmak şart değildir.",
+        rules: "Sürekli fonksiyonda yerine koy. 0/0 çıkarsa sadeleştirme ara. Sağ ve sol limit eşit değilse iki yönlü limit yok.",
+        visual: "Grafikte x=a’ya soldan ve sağdan yaklaş; y değerleri aynı yüksekliğe gidiyorsa limit vardır.",
+        example1A: "lim x→2 (x²−4)/(x−2).\nYöntem A: (x−2)(x+2)/(x−2)=x+2 → 4.",
+        example1B: "Aynı — Yöntem B, tablo: 1,99→3,99; 2,01→4,01 → 4’e yaklaşır.",
+        example2: "lim x→3 (2x+1)=7, doğrudan yerine koy.",
+        example3: "f=0 (x<0),1 (x≥0). x→0 soldan 0, sağdan 1 → limit yok.",
+        pitfalls: "0/0 sonuç değil belirsizliktir. Fonksiyon değeri ile limit farklı olabilir.",
+        recap: "Özet: önce yerine koy; belirsizlikte sadeleştir; parçalı durumda sağ-sol kontrol et.",
+      );
+    case "10":
+      return const LessonBlueprint(
+        useCase: "Anlık hız, eğim, maksimum-minimum ve optimizasyon türevle çözülür.",
+        concept: "Türev anlık değişim hızıdır; grafikte teğetin eğimidir.",
+        rules: "(xⁿ)'=nxⁿ⁻¹. Sabit türevi 0. Çarpım u'v+uv'. Zincir kuralı: dış türev × iç türev.",
+        visual: "İki noktalı kesen eğimini noktalar yaklaşınca tek noktadaki teğet eğimine dönüştürürüz.",
+        example1A: "f=x²+3x.\nYöntem A — Kurallar: f'=2x+3.",
+        example1B: "Aynı fikri x² için limit tanımıyla: [(x+h)²−x²]/h=2x+h → h→0 → 2x.",
+        example2: "f=(2x+1)³ → 3(2x+1)²·2=6(2x+1)².",
+        example3: "f=−x²+4x. f'=−2x+4=0 → x=2; f(2)=4 ve parabol aşağı → maksimum.",
+        pitfalls: "Zincir kuralında iç türevi unutma. f'=0 yalnız aday noktadır, türünü kontrol et.",
+        recap: "Özet: türev=anlık değişim. Temel kurallar + zincir; optimizasyonda kritik noktaları incele.",
+      );
+    case "11":
+      return const LessonBlueprint(
+        useCase: "Alan, toplam değişim, yol ve birikimli miktarlar integralle hesaplanır.",
+        concept: "Belirsiz integral türevin tersidir: ∫f=F+C. Belirli integral F(b)−F(a) ile toplam değişimi verir.",
+        rules: "∫xⁿdx=xⁿ⁺¹/(n+1)+C (n≠−1). Sabit çarpan dışarı çıkar.",
+        visual: "Eğri altını çok ince dikdörtgenlerle doldur; dikdörtgenler inceldikçe toplam gerçek alana yaklaşır.",
+        example1A: "∫(2x+3)dx.\nYöntem A: terim terim → x²+3x+C.",
+        example1B: "Aynı — Yöntem B, ters türev: türevi 2x+3 olan x²+3x+C.",
+        example2: "∫₀² x dx = [x²/2]₀²=2.",
+        example3: "∫3x²dx=x³+C; türevle kontrol: 3x².",
+        pitfalls: "Belirsiz integralde +C unutma. Kuvveti artırdıktan sonra yeni üse böl.",
+        recap: "Özet: integral ters türev ve birikimdir; belirli integralde üst-alt sınırı uygula.",
+      );
+    case "12":
+      return const LessonBlueprint(
+        useCase: "Elektrik, dalga ve gerçek kökü olmayan denklemlerde karmaşık sayılar kullanılır.",
+        concept: "i²=−1. z=a+bi; a gerçel, b sanal katsayıdır.",
+        rules: "Toplam bileşen bileşen yapılır. Çarpım dağıtılır, i²=−1. Eşlenik a−bi ve çarpımı a²+b².",
+        visual: "Karmaşık düzlemde a+bi noktası (a,b) olarak çizilir: yatay gerçel, dikey sanal.",
+        example1A: "(3+2i)(1−i).\nYöntem A: dağıt →3−3i+2i−2i²=5−i.",
+        example1B: "Aynı — Yöntem B: (ac−bd)+(ad+bc)i → 5−i.",
+        example2: "(4+3i)+(2−5i)=6−2i.",
+        example3: "1/(2+i): eşlenikle → (2−i)/5.",
+        pitfalls: "i²=−1. Gerçel ve sanal terimleri ayrı topla. Bölmede eşlenik kullan.",
+        recap: "Özet: iki bileşen gibi işle; i² gördüğünde −1’e dönüştür.",
+      );
+    case "13":
+      return const LessonBlueprint(
+        useCase: "Yapay zekâ, grafik, fizik ve çok denklemli sistemlerde matris-vektör dili kullanılır.",
+        concept: "Matris satır-sütun tablosudur. 2×2 determinant ad−bc. Lineer sistem Ax=b biçiminde yazılabilir.",
+        rules: "Det≠0 ise 2×2 matris terslenebilir. Matris çarpımı satır-sütun noktasal çarpımıdır.",
+        visual: "2x+y=5, x−y=1 sistemi A=[[2,1],[1,−1]], bilinmeyen vektörü [x,y] biçiminde tek yapıda yazılır.",
+        example1A: "2x+y=5, x−y=1.\nYöntem A — Yok etme: denklemleri topla →3x=6 → x=2,y=1.",
+        example1B: "Aynı — Yöntem B, Cramer: detA=−3; detX=−6 → x=2; benzer şekilde y=1.",
+        example2: "det[[3,4],[2,5]]=15−8=7.",
+        example3: "u=(1,2),v=(3,−1). u+v=(4,1), noktasal çarpım=3−2=1.",
+        pitfalls: "Matris çarpımı eleman eleman değildir. AB genelde BA’ya eşit değildir. det=0 ise ters yok.",
+        recap: "Özet: satır işlemleri sistem çözmenin temelidir; determinant terslenebilirlik ve Cramer için önemlidir.",
+      );
+    case "14":
+      return const LessonBlueprint(
+        useCase: "Nüfus, soğuma, devre ve hareket gibi değişimin kendisinin denklem olduğu modeller diferansiyel denklemdir.",
+        concept: "dy/dx=f(x,y) bize y’nin değişim hızını söyler; amaç bu kurala uyan y fonksiyonunu bulmaktır.",
+        rules: "dy/dx=f(x) ise integre et. Başlangıç koşulu C sabitini belirler. Ayrılabilir denklemlerde x ve y terimleri ayrı taraflara alınır.",
+        visual: "dy/dx=2x: x>0 iken eğim pozitif ve büyür; çözüm eğrileri yukarı kıvrılır.",
+        example1A: "dy/dx=2x, y(0)=3.\nYöntem A: y=x²+C; C=3 → y=x²+3.",
+        example1B: "Aynı — Yöntem B, türev tanı: türevi 2x olan x²; başlangıç noktası C=3.",
+        example2: "dy/dx=3, y(2)=5 → y=3x+C; C=−1 → y=3x−1.",
+        example3: "dy/dx=y çözüm ailesi Ceˣ; y(0)=2 → y=2eˣ.",
+        pitfalls: "İntegral sabitini unutma. Başlangıç koşulunu genel çözümden sonra uygula.",
+        recap: "Özet: değişim kuralını integre ederek fonksiyonu kur; başlangıç koşulu tek çözümü seçer.",
+      );
+    case "15":
+      return const LessonBlueprint(
+        useCase: "Anket, deney, kalite kontrol ve finansal riskte örnekten ana kütle hakkında çıkarım yapılır.",
+        concept: "Ortalama merkez, standart sapma yayılım; z-skoru bir değerin ortalamadan kaç standart sapma uzakta olduğunu gösterir.",
+        rules: "z=(x−μ)/σ. Standart hata yaklaşık σ/√n. Örneklem büyüdükçe ortalama tahmininin belirsizliği azalır.",
+        visual: "Normal dağılım çan biçimlidir; ortalama merkezde, standart sapma yatay yayılım ölçeğidir.",
+        example1A: "μ=70,σ=10,x=85.\nYöntem A: z=(85−70)/10=1,5.",
+        example1B: "Aynı — Yöntem B: ortalamadan 15 puan uzakta; her standart birim 10 → 15/10=1,5.",
+        example2: "σ=12,n=36 → standart hata 12/6=2.",
+        example3: "r=0,82 → güçlü pozitif doğrusal ilişki; tek başına neden-sonuç kanıtlamaz.",
+        pitfalls: "Standart sapma ile standart hata farklıdır. Korelasyon nedensellik değildir. Yanlı örneklemi büyük n kurtarmaz.",
+        recap: "Özet: z-skoru konumu standartlaştırır; standart hata tahmin belirsizliğini ölçer; veri toplama yöntemi kritiktir.",
+      );
+    case "1.1":
+      return const LessonBlueprint(
+        useCase: "Markette adet sayarken doğal sayılar, borç ve sıcaklıkta tam sayılar, bir bütünün parçasını anlatırken rasyonel sayılar kullanılır. Bu konu cebirin temel alfabesidir.",
+        concept: "Doğal sayılar 0,1,2,...; tam sayılar ...,−2,−1,0,1,2,...; rasyonel sayılar a/b biçiminde yazılabilen sayılardır (b≠0). Sayı doğrusunda sağa gittikçe değer büyür.",
+        rules: "Pozitif sayı her negatif sayıdan büyüktür. Negatiflerde sıfıra yakın olan daha büyüktür: −2>−7. Kesirleri ortak payda, ondalık veya çapraz çarpma ile karşılaştırabilirsin. Her tam sayı aynı zamanda rasyoneldir: 4=4/1.",
+        visual: "Sayı doğrusunu cadde gibi düşün: −5 −4 −3 −2 −1 0 1 2 3 4 5. Sağ taraf daha büyük, sol taraf daha küçüktür. Bu yüzden −3, −7’den büyüktür.",
+        example1A: "Soru: −7/2 ile −3 hangisi büyük?\nYöntem A — Ondalık:\n1) −7/2=−3,5.\n2) −3=−3,0.\n3) −3,0 sayı doğrusunda daha sağdadır.\nSonuç: −3 > −7/2.",
+        example1B: "Aynı soru — Yöntem B, ortak payda:\n−3=−6/2.\nŞimdi −7/2 ve −6/2 karşılaştırılır.\n−6>−7 olduğu için −6/2 yani −3 daha büyüktür.",
+        example2: "Soru: −4 ile 3 arasındaki tam sayıların toplamı, uçlar hariç?\n−3,−2,−1,0,1,2.\n(−2+2)=0, (−1+1)=0; geriye −3 kalır.\nCevap: −3.",
+        example3: "Soru: 0,125’i kesre çevir.\n0,125=125/1000.\nPay ve paydayı 125’e böl: 1/8.\nSonuç: 1/8.",
+        pitfalls: "Sık hata: “8>3 olduğuna göre −8>−3” demek. Yanlış; negatiflerde sayı doğrusu kullanılır. Ayrıca payda 0 olamaz ve devreden ondalıklar da rasyoneldir.",
+        recap: "Özet: sayı türünü tanı, sayı doğrusunda konumu düşün, kesirleri ortak biçime getir. Negatif işaretleri rakam büyüklüğünden ayrı değerlendir.",
+      );
+    case "1.2":
+      return const LessonBlueprint(
+        useCase: "Mutlak değer yönü değil uzaklığı ölçer. Bir noktanın merkeze uzaklığı, hedef değerden sapma ve hata miktarı gibi durumlarda kullanılır.",
+        concept: "|x|, x’in 0’a uzaklığıdır. Bu yüzden |5|=5 ve |−5|=5. |x−a| ise x ile a arasındaki uzaklıktır.",
+        rules: "|x|≥0. |x|=k (k>0) ise x=k veya x=−k. |x|<k ise −k<x<k. |x|>k ise x<−k veya x>k. |ab|=|a||b|.",
+        visual: "|x−2|=4, '2’ye uzaklığı 4 olan noktaları bul' demektir. 2’nin 4 sağında 6, 4 solunda −2 vardır.",
+        example1A: "Soru: |2x−6|=4.\nYöntem A — İki durum:\n2x−6=4 → x=5.\n2x−6=−4 → x=1.\nSonuç: x=1 veya 5.",
+        example1B: "Aynı soru — Yöntem B, uzaklık:\n|2(x−3)|=4 → 2|x−3|=4 → |x−3|=2.\nx, 3’ten 2 birim uzakta: 3−2=1 ve 3+2=5.",
+        example2: "Soru: |x+1|<3.\n−3<x+1<3.\nHer tarafa 1 çıkar: −4<x<2.\n'Küçük' mutlak değerde çözüm merkezin çevresindeki aralıktır.",
+        example3: "Soru: |x−4|>2.\n4’e uzaklık 2’den büyük olmalı.\n2 ile 6 arasının dışı seçilir: x<2 veya x>6.",
+        pitfalls: "|−7|=−7 değildir; uzaklık negatif olamaz. |x|=−3 gerçek sayılarda çözümsüzdür. < ile > durumlarında çözüm şekli ters mantıkla gider.",
+        recap: "Özet: mutlak değer=uzaklık. Denklemde iki yön, küçük eşitsizlikte iç bölge, büyük eşitsizlikte dış bölge.",
+      );
+    case "1.3":
+      return const LessonBlueprint(
+        useCase: "Üslü sayılar bilgisayar belleği, hızlı büyüme, bilimsel gösterim ve bileşik artışta tekrarlı çarpımı kısaltır.",
+        concept: "aⁿ, a’nın n kez çarpımıdır. a⁰=1 (a≠0), a⁻ⁿ=1/aⁿ. Parantez önemlidir: (−2)²=4 ama −2²=−4.",
+        rules: "aᵐ·aⁿ=aᵐ⁺ⁿ; aᵐ/aⁿ=aᵐ⁻ⁿ; (aᵐ)ⁿ=aᵐⁿ; (ab)ⁿ=aⁿbⁿ. Negatif üs tersini aldırır.",
+        visual: "2,4,8,16,32 dizisini düşün: her adımda 2 ile çarpılır. Üstel büyümede artış miktarı da giderek büyür.",
+        example1A: "Soru: 2³·2⁴.\nYöntem A — Kural:\nTabanlar aynı → üsleri topla: 2⁷=128.",
+        example1B: "Aynı soru — Yöntem B, açarak:\n2³=2·2·2 ve 2⁴=2·2·2·2.\nToplam 7 tane 2 çarpılır → 2⁷=128.",
+        example2: "Soru: (3²)³/3⁴.\n(3²)³=3⁶.\n3⁶/3⁴=3²=9.",
+        example3: "Soru: 5⁻².\nNegatif üs → tersini al: 1/5²=1/25.",
+        pitfalls: "2³, 2×3 değildir. Kuvvetin kuvvetinde üsler toplanmaz çarpılır. a⁰=0 değil 1’dir. Negatif üs sonucu negatif yapmaz.",
+        recap: "Özet: çarpma → üsleri topla; bölme → çıkar; kuvvetin kuvveti → çarp; negatif üs → tersini al.",
+      );
+    case "1.4":
+      return const LessonBlueprint(
+        useCase: "Köklü sayılar kare alanından kenar bulma, Pisagor, uzaklık ve mühendislik formüllerinde sık görülür.",
+        concept: "√a, karesi a olan pozitif değerdir. √25=5. Tam kare çarpanlar kök dışına çıkarılabilir: √72=√(36·2)=6√2.",
+        rules: "√(ab)=√a√b; √(a/b)=√a/√b; √(a²)=|a|. Benzer köklüler katsayıları toplanarak birleştirilir: 3√2+5√2=8√2.",
+        visual: "Alanı 36 olan kareyi düşün. Kenarı 6’dır, çünkü 6²=36. Karekök, alan bilgisinden kare kenarını geri bulur.",
+        example1A: "Soru: √72.\nYöntem A — En büyük tam kare:\n72=36·2 → √72=6√2.",
+        example1B: "Aynı soru — Yöntem B, asal çarpan:\n72=2·2·2·3·3.\nÇiftler dışarı: 2·3=6, içeride 2 kalır → 6√2.",
+        example2: "Soru: 2√8+√18.\n√8=2√2 → 2√8=4√2.\n√18=3√2.\nToplam 7√2.",
+        example3: "Soru: 3/√3 paydasını köksüz yap.\n√3/√3 ile çarp: 3√3/3=√3.",
+        pitfalls: "√(a+b)=√a+√b genelde yanlıştır. √(a²)=a değil |a|’dır. Kök içleri farklıysa doğrudan katsayı gibi toplanmaz.",
+        recap: "Özet: önce sadeleştir, tam kareleri dışarı çıkar, sonra benzer köklüleri birleştir.",
+      );
+    case "1.5":
+      return const LessonBlueprint(
+        useCase: "Çarpanlara ayırma denklemleri çözmek, cebirsel kesirleri sadeleştirmek, parabol köklerini bulmak ve limitte sadeleştirme yapmak için kullanılır.",
+        concept: "Dağıtmanın tersidir: 3x+6=3(x+2). Büyük ifadeyi daha küçük çarpanların çarpımı şeklinde yazarız.",
+        rules: "Ortak çarpan: ab+ac=a(b+c). Kare farkı: a²−b²=(a−b)(a+b). Tam kare: a²±2ab+b²=(a±b)².",
+        visual: "3x+6’yı iki ayrı alan yerine ortak yüksekliği 3 olan tek dikdörtgen gibi düşün: 3(x+2).",
+        example1A: "Soru: x²−5x+6.\nYöntem A — Çarpım/toplam:\nÇarpımı 6, toplamı −5 olan −2 ve −3.\n(x−2)(x−3).",
+        example1B: "Aynı soru — Yöntem B, köklerden:\nx²−5x+6=0 kökleri 2 ve 3’tür.\nKöklerden çarpanlar (x−2)(x−3).",
+        example2: "Soru: 9x²−25.\nİki kare farkı: (3x)²−5²=(3x−5)(3x+5).",
+        example3: "Soru: 6x²+9x.\nOrtak çarpan 3x: 3x(2x+3).",
+        pitfalls: "Her soruda önce ortak çarpan ara. Sonucu dağıtarak kontrol et. İşaretleri toplam ve çarpım koşuluna göre seç.",
+        recap: "Özet sıra: ortak çarpan → özdeşlik → üç terimli çarpım/toplam → gerekiyorsa başka yöntem.",
+      );
+    case "1.6":
+      return const LessonBlueprint(
+        useCase: "Tarif büyütme, fiyat-miktar, harita ölçeği ve işçi-gün problemleri oran-orantı ile çözülür.",
+        concept: "Oran a/b; orantı a/b=c/d. Doğru orantıda birlikte artma/azalma, ters orantıda biri artarken diğerinin azalması vardır.",
+        rules: "a/b=c/d → ad=bc. Doğru orantı y=kx. Ters orantı xy=k. Birim oran yöntemi çoğu soruda hızlıdır.",
+        visual: "3 kg ürün 90 TL ise 1 kg 30 TL. Miktar iki katına çıkarsa doğru orantıda fiyat da iki katına çıkar.",
+        example1A: "Soru: 3 kg 90 TL, 5 kg?\nYöntem A — Birim fiyat:\n90/3=30 TL/kg.\n5·30=150 TL.",
+        example1B: "Aynı soru — Yöntem B, orantı:\n3/90=5/x → 3x=450 → x=150.",
+        example2: "6 işçi işi 10 günde bitiriyor, 12 işçi?\nTers orantı: 6·10=12·x → x=5 gün.",
+        example3: "Ölçek 1:200000, haritada 4 cm.\n4·200000=800000 cm=8 km.",
+        pitfalls: "İlişkinin doğru mu ters mi olduğunu belirlemeden denklem kurma. Birimleri eşitle.",
+        recap: "Özet: önce ilişkinin yönünü seç; sonra birim oran veya içler-dışlar ile çöz.",
+      );
+    case "1.7":
+      return const LessonBlueprint(
+        useCase: "İndirim, zam, enflasyon, faiz, kâr-zarar ve başarı oranı yüzde ile hesaplanır.",
+        concept: "%p=p/100. Bir sayının %p’si sayı·p/100. Artış çarpanı 1+p/100, azalış çarpanı 1−p/100.",
+        rules: "Yüzde değişim=(yeni−eski)/eski·100. Ardışık yüzdeler doğrudan toplanmaz; her değişim yeni değer üzerinden uygulanır.",
+        visual: "800 TL’nin %15’i 120 TL’dir. 100 eş parçadan 15 parça düşün; geriye %85 yani 680 TL kalır.",
+        example1A: "800 TL üründe %15 indirim.\nYöntem A: 800·0,15=120 indirim; 800−120=680.",
+        example1B: "Aynı soru — Yöntem B: kalan oran %85.\n800·0,85=680.",
+        example2: "500 TL önce %20 artıp sonra %20 azalır:\n500·1,20=600; 600·0,80=480.\nBaşlangıca dönmez.",
+        example3: "240’tan 300’e artış:\nFark 60.\n60/240=0,25 → %25.",
+        pitfalls: "Yüzde değişimde paydaya eski değer gelir. +%10 ve −%10 birbirini tam götürmez.",
+        recap: "Özet: yüzdeleri çarpana çevir; artışta 1+oran, azalışta 1−oran.",
+      );
+    case "2.1":
+      return const LessonBlueprint(
+        useCase: "Yaş, fiyat, mesafe ve bilinmeyen miktar problemlerinde verilen ilişkiyi denklem kurarak çözeriz.",
+        concept: "Denklem bir terazidir. Bir tarafa yaptığın işlemi diğer tarafa da yaparsan eşitlik bozulmaz. Hedef bilinmeyeni yalnız bırakmaktır.",
+        rules: "ax+b=c → ax=c−b → x=(c−b)/a. Parantez varsa dağıtılabilir. Kesirli denklemlerde ortak payda ile tüm denklemi çarpmak kullanılabilir.",
+        visual: "3 kutu+5 kg=20 kg. İki taraftan 5 çıkar → 3 kutu=15. Üçe böl → bir kutu=5.",
+        example1A: "3x+5=20.\nYöntem A — Denge:\n−5: 3x=15.\n/3: x=5.",
+        example1B: "Aynı soru — Yöntem B, ters işlem:\nx’e son olarak +5 yapılmış → 20−5=15.\nÖncesinde ×3 → 15/3=5.",
+        example2: "2(x−3)+4=14 → 2x−6+4=14 → 2x−2=14 → 2x=16 → x=8.",
+        example3: "x/3+2=7 → x/3=5 → x=15. Alternatif: tüm denklemi 3 ile çarp → x+6=21.",
+        pitfalls: "'Karşıya geçir işaret değiştir' aslında iki tarafa aynı işlemi yapmanın kısaltmasıdır. Parantezi tüm terimlere dağıt.",
+        recap: "Özet: x’i yalnız bırak, işlemleri ters sırayla çöz, sonucu yerine koyarak doğrula.",
+      );
+    case "2.2":
+      return const LessonBlueprint(
+        useCase: "Bütçe sınırı, minimum puan, hız limiti ve yaş koşulları eşitsizlikle ifade edilir.",
+        concept: "Eşitsizlik tek bir sayı değil aralık verir. < ve > uç noktayı içermez; ≤ ve ≥ içerir.",
+        rules: "Toplama/çıkarma ve pozitif sayıyla çarpma-bölmede yön aynı kalır. Negatif sayıyla çarpma veya bölmede işaret yön değiştirir.",
+        visual: "x>2 için 2’de açık nokta ve sağa ok; x≥2 için 2’de dolu nokta ve sağa ok.",
+        example1A: "−2x+3>7.\n3 çıkar: −2x>4.\n−2’ye böl: x<−2. Negatife böldüğümüz için yön değişti.",
+        example1B: "Aynı çözümü test et: x=−3 → 9>7 doğru. x=0 → 3>7 yanlış. Böylece x<−2 aralığı doğrulanır.",
+        example2: "3x−4≤11 → 3x≤15 → x≤5.",
+        example3: "2<x+1≤6. Her üç parçadan 1 çıkar → 1<x≤5.",
+        pitfalls: "Negatifle bölmede yön çevirmeyi unutma. Bileşik eşitsizlikte işlemi üç tarafa uygula.",
+        recap: "Özet: denklem gibi çöz; tek ek kritik kural negatifle çarpma/bölmede yönün dönmesidir.",
+      );
+    case "2.3":
+      return const LessonBlueprint(
+        useCase: "Parabol hareketi, maksimum alan ve birçok optimizasyon problemi ikinci derece denkleme dönüşür.",
+        concept: "ax²+bx+c=0 (a≠0). Çözümler köklerdir. Grafikte kökler parabolün x eksenini kestiği noktalardır.",
+        rules: "Δ=b²−4ac. Δ>0 iki kök, Δ=0 çift kök, Δ<0 gerçek kök yok. x=(-b±√Δ)/(2a).",
+        visual: "Parabol x eksenini iki kez keserse iki kök; teğet olursa bir çift kök; hiç kesmezse gerçek kök yoktur.",
+        example1A: "x²−5x+6=0.\nYöntem A — Çarpan:\n(x−2)(x−3)=0 → x=2,3.",
+        example1B: "Aynı soru — Yöntem B, formül:\nΔ=25−24=1.\nx=(5±1)/2 → 2 ve 3.",
+        example2: "2x²−8=0 → x²=4 → x=±2. Bu soruda genel formül gereksizdir.",
+        example3: "x²+4x+4=0 → (x+2)²=0 → x=−2; Δ=0.",
+        pitfalls: "x²=9 için ±3 vardır. Kök formülünde −b ve b² işaretlerine dikkat et.",
+        recap: "Özet: önce kolay çarpan yöntemlerini ara; olmazsa diskriminant-kök formülü genel çözümdür.",
+      );
+    case "2.4":
+      return const LessonBlueprint(
+        useCase: "Bir ikinci derece ifadenin hangi aralıklarda pozitif/negatif olduğunu bulmak için ikinci derece eşitsizlik kullanılır.",
+        concept: "Önce kökleri bul, sonra köklerin böldüğü aralıklarda işareti incele.",
+        rules: "a>0 ve iki kök varsa parabol dışarıda pozitif, arada negatif. a<0’da tersi. ≥/≤ varsa uygun kökler dahil edilir.",
+        visual: "x²−5x+6=(x−2)(x−3). Kökler 2 ve 3. Yukarı açıldığı için x<2:+, 2<x<3:−, x>3:+.",
+        example1A: "x²−5x+6>0.\nYöntem A — İşaret tablosu:\nKökler 2,3. Testler dış aralıkta +, ortada −.\nSonuç x<2 veya x>3.",
+        example1B: "Aynı soru — Yöntem B, parabol:\na=1>0 → yukarı açılır. x ekseninin üstü köklerin dışındadır.",
+        example2: "x²−4≤0 → (x−2)(x+2)≤0. Kökler −2,2; arası negatif/eşit → −2≤x≤2.",
+        example3: "−x²+4x−3>0 → −(x−1)(x−3)>0 → (x−1)(x−3)<0 → 1<x<3.",
+        pitfalls: "Kökleri bulup bırakma; istenen işaret bölgesini seç. Baş katsayının işaretini kontrol et.",
+        recap: "Özet: kökler → aralıklar → işaret → istenen bölge.",
+      );
+    case "2.5":
+      return const LessonBlueprint(
+        useCase: "İki bilinmeyenli fiyat, yaş, karışım ve kesişim problemlerinde iki denklem birlikte çözülür.",
+        concept: "Ortak çözüm iki denklemi de aynı anda sağlayan (x,y) çiftidir. Grafikte iki doğrunun kesişimidir.",
+        rules: "Yok etme: bir değişkenin katsayılarını zıt yap. Yerine koyma: bir değişkeni yalnız bırakıp diğer denkleme yaz. Grafik: kesişimi bul.",
+        visual: "x+y=10 ve x−y=2 doğruları (6,4)’te kesişir; bu nokta iki denklemi de sağlar.",
+        example1A: "x+y=10, x−y=2.\nYöntem A — Yok etme:\nTopla → 2x=12 → x=6; y=4.",
+        example1B: "Aynı soru — Yöntem B, yerine koyma:\nx=y+2.\n(y+2)+y=10 → y=4 → x=6.",
+        example2: "2x+3y=13, x+y=5.\nx=5−y → 10−2y+3y=13 → y=3, x=2.",
+        example3: "2x+y=7 ve 4x+2y=14 aynı doğruyu temsil eder → sonsuz çözüm.",
+        pitfalls: "Yok etmede tüm denklemi çarp. Paralel farklı doğrular çözüm vermez; aynı doğrular sonsuz çözüm verir.",
+        recap: "Özet: kolay katsayı varsa yok etme, değişken yalnızsa yerine koyma, anlam için grafik.",
+      );
+    case "3.1":
+      return const LessonBlueprint(
+        useCase: "Fonksiyon taksi ücreti, sıcaklık dönüşümü, gelir hesabı gibi girdi-çıktı ilişkilerini modelleyen matematik makinesidir.",
+        concept: "f(x), x girdisine karşılık tek bir çıktı verir. Tanım kümesi girişler, görüntü/değer kümesi çıktılardır.",
+        rules: "f(a) için x yerine a yaz. Bileşke (f∘g)(x)=f(g(x)). Grafikte dikey doğru testi fonksiyon kontrolü sağlar.",
+        visual: "x=4 → [×2,+3] → 11. Bu makine f(x)=2x+3’tür.",
+        example1A: "f(x)=2x+3, f(4)?\nYöntem A — Yerine koy: 2·4+3=11.",
+        example1B: "Aynı soru — Yöntem B, makine:\n4 → ×2=8 → +3=11.",
+        example2: "f(x)=x²−1, f(−3)=9−1=8. Negatif değeri parantezle koy.",
+        example3: "f(x)=x+1, g(x)=2x. (f∘g)(3): g(3)=6, f(6)=7.",
+        pitfalls: "f(x) çarpma değildir. Bileşkede içten dışa ilerle. Tanım kısıtlarını kontrol et.",
+        recap: "Özet: girdi → kural → çıktı. f(a) yerine koymadır; bileşke makineleri ardışık bağlamaktır.",
+      );
+    case "3.2":
+      return const LessonBlueprint(
+        useCase: "Sabit hız, birim fiyat ve doğrusal maliyet ilişkileri doğrusal fonksiyonlarla modellenir.",
+        concept: "y=mx+b. m eğim, b y-kesişimidir. Eğim x bir artınca y’nin değişimini ölçer.",
+        rules: "m=(y₂−y₁)/(x₂−x₁). Nokta-eğim: y−y₁=m(x−x₁). Paralel doğrular aynı eğime sahiptir.",
+        visual: "m=2: sağa 1, yukarı 2. m=−1/2: sağa 2, aşağı 1.",
+        example1A: "(1,3) ve (4,9) doğrusu.\nYöntem A: m=6/3=2. 3=2·1+b → b=1. y=2x+1.",
+        example1B: "Aynı soru — Yöntem B: y−3=2(x−1) → y=2x+1.",
+        example2: "y=−3x+6 eksen kesişimleri: x=0 → (0,6); y=0 → x=2 → (2,0).",
+        example3: "y=4x−1’e paralel, (2,5)’ten geçen: y−5=4(x−2) → y=4x−3.",
+        pitfalls: "Eğim hesabında nokta sırasını pay/payda aynı tut. b ile m’yi karıştırma.",
+        recap: "Özet: iki noktadan önce eğim; sonra nokta-eğim veya y=mx+b.",
+      );
+    case "3.3":
+      return const LessonBlueprint(
+        useCase: "Atış hareketi, maksimum alan ve optimizasyon parabol yani ikinci derece fonksiyonlarla modellenir.",
+        concept: "f(x)=ax²+bx+c. a>0 yukarı, a<0 aşağı açılır. Tepe noktası maksimum/minimumu verir.",
+        rules: "Tepe x’i h=−b/(2a), k=f(h). Tepe formu a(x−h)²+k. Kökler f(x)=0 çözümleridir.",
+        visual: "Parabol simetriktir; simetri ekseni tepe noktasından geçer.",
+        example1A: "f=x²−4x+3 tepe.\nYöntem A: h=4/2=2, k=f(2)=−1 → (2,−1).",
+        example1B: "Aynı soru — Yöntem B, kare tamamlama:\nx²−4x+3=(x−2)²−1 → tepe (2,−1).",
+        example2: "f=−2x²+8x−5. h=2, f(2)=3. a<0 → maksimum 3.",
+        example3: "x²−5x+6 kökleri: (x−2)(x−3)=0 → 2 ve 3.",
+        pitfalls: "Kök, tepe ve y-kesişimini karıştırma. −b/(2a) hesabında parantez kullan.",
+        recap: "Özet: a yönü, c y-kesişimini, kökler x-kesişimlerini, tepe maksimum/minimumu anlatır.",
+      );
+    case "3.4":
+      return const LessonBlueprint(
+        useCase: "Uzaklık ve sapma modellerinde mutlak değer fonksiyonları V biçimli grafikler oluşturur.",
+        concept: "f(x)=|x| temel grafiktir. |x−h|+k tepeyi (h,k)’ye taşır.",
+        rules: "|x−h| içeride yatay öteleme; +k dışarıda düşey öteleme. −|x| grafiği aşağı çevirir.",
+        visual: "|x| için x=−2 ve x=2 aynı y=2 verir; grafik y eksenine göre simetriktir.",
+        example1A: "y=|x−2|+1.\nYöntem A — Dönüşüm: 2 sağ, 1 yukarı → tepe (2,1).",
+        example1B: "Aynı soru — Yöntem B: |x−2| en küçük 0 olur; x=2 iken y=1 → tepe (2,1).",
+        example2: "y=−|x+3|+4: 3 sol, 4 yukarı, eksi nedeniyle aşağı bakan V. Tepe (−3,4).",
+        example3: "|x−1|=3 → x−1=±3 → x=4 veya −2.",
+        pitfalls: "|x−2| 2 sağa gider; içerideki işaret ters görünür. −f(x) ile f(−x) farklıdır.",
+        recap: "Özet: iç kısım yatay, dış kısım düşey dönüşümü belirler; tepe içi 0 yapan x’te oluşur.",
+      );
+    case "3.5":
+      return const LessonBlueprint(
+        useCase: "Kargo ücreti, vergi dilimi ve otopark tarifesi gibi koşula göre değişen kurallar parçalı fonksiyonla yazılır.",
+        concept: "Aynı fonksiyon farklı x aralıklarında farklı formüller uygular. Önce koşulu seçmek gerekir.",
+        rules: "Sınır noktalarında < ve ≤ farkı kritiktir. Grafikte dahil olmayan uç açık, dahil olan uç dolu nokta ile çizilir.",
+        visual: "f(x)=x+2 (x<0), 2x (x≥0). Sol tarafta bir doğru, sağ tarafta başka bir doğru parçası oluşur.",
+        example1A: "f(−3)?\nYöntem A: −3<0 → ilk kural → −3+2=−1.",
+        example1B: "Aynı soru — Yöntem B, akış: 'x≥0 mı?' hayır → x+2 kolu → −1.",
+        example2: "f(0): 0≥0 olduğu için ikinci kural → 2·0=0.",
+        example3: "g=x² (x≤2), 3x−2 (x>2). g(2)=4, g(3)=7.",
+        pitfalls: "Önce koşul seç; bütün formülleri aynı anda uygulama. Sınırdaki dahil olma işaretini kontrol et.",
+        recap: "Özet: x’e bak → doğru aralığı seç → yalnız o formülü uygula.",
+      );
+    case "3.6":
+      return const LessonBlueprint(
+        useCase: "Temel grafikleri yeniden çizmeden öteleme, yansıma ve ölçekleme ile yeni grafikler oluşturulur.",
+        concept: "f(x)+k düşey, f(x−h) yatay ötelemedir. −f(x) x eksenine, f(−x) y eksenine yansıtır.",
+        rules: "İçerideki yatay değişim ters işaretli görünür: f(x−3) 3 sağ. Dışarıdaki +2 doğrudan 2 yukarıdır.",
+        visual: "y=x² tepesini (0,0)’dan y=(x−2)²+3 ile (2,3)’e taşı.",
+        example1A: "y=(x−2)²+3.\nYöntem A: x−2 → 2 sağ, +3 → 3 yukarı.",
+        example1B: "Aynı — Yöntem B, noktaları taşı: (0,0),(1,1),(−1,1) → (2,3),(3,4),(1,4).",
+        example2: "y=−2|x|: x eksenine yansıma ve dikeyde 2 kat ölçek.",
+        example3: "y=f(−x)+1: önce y eksenine yansıt, sonra 1 yukarı taşı.",
+        pitfalls: "−f(x) ve f(−x) farklıdır. İç yatay dönüşümlerde işaret ters okunur.",
+        recap: "Özet: içerisi yatay, dışarısı düşey; eksi işaretinin konumu yansıma eksenini belirler.",
+      );
+    case "4.1":
+      return const LessonBlueprint(
+        useCase: "Üçgen türü, hangi geometri kuralının kullanılacağını belirler; yapı, arazi ve tasarım problemlerinde temel şekildir.",
+        concept: "Kenarlarına göre eşkenar/ikizkenar/çeşitkenar; açılarına göre dar/dik/geniş. İç açı toplamı 180°.",
+        rules: "Eşkenarda tüm açılar 60°. İkizkenarda eş kenarların karşı açıları eşit. Üçgen eşitsizliği: |a−b|<c<a+b.",
+        visual: "İkizkenar üçgende simetri doğrusu tabanı ikiye böler ve özel durumlarda yükseklik/açıortay/kenarortaydır.",
+        example1A: "Kenarlar 5,5,8.\nYöntem A: iki kenar eşit → ikizkenar.",
+        example1B: "Aynı — Yöntem B: eş 5’lerin karşı açıları eşit olmalı; simetri ikizkenar yapıyı doğrular.",
+        example2: "Açılar 40,60,80: hepsi <90 → dar açılı; toplam 180.",
+        example3: "3,4,8 üçgen olur mu? 3+4=7<8 → olmaz.",
+        pitfalls: "Sadece açı toplamına değil kenarların üçgen eşitsizliğine de bak.",
+        recap: "Özet: önce kenar türü, sonra açı türü, sonra üçgen eşitsizliği.",
+      );
+    case "4.2":
+      return const LessonBlueprint(
+        useCase: "Merdiven, köşegen ve koordinat uzaklığı dik üçgende Pisagor ile hesaplanır.",
+        concept: "Dik üçgende a²+b²=c²; c hipotenüs ve 90° açının karşısındaki en uzun kenardır.",
+        rules: "Bilinen üçlüler: 3-4-5, 5-12-13, 8-15-17. Eksik dik kenar √(c²−b²).",
+        visual: "Dik kenarlara kurulan iki karenin alanları toplamı hipotenüse kurulan karenin alanına eşittir.",
+        example1A: "Dik kenarlar 6,8.\nYöntem A: c²=36+64=100 → c=10.",
+        example1B: "Aynı — Yöntem B: 6-8-10, 3-4-5’in iki katıdır → c=10.",
+        example2: "c=13, bir kenar 5 → diğer²=169−25=144 → 12.",
+        example3: "A(1,2),B(4,6): farklar 3,4 → uzaklık √(9+16)=5.",
+        pitfalls: "Pisagor doğrudan sadece dik üçgende kullanılır. Hipotenüsü doğru tanı.",
+        recap: "Özet: dik açı varsa kareler toplamı; bilinen üçlüler hız sağlar.",
+      );
+    case "4.3":
+      return const LessonBlueprint(
+        useCase: "Yükseklik, eğim, dalga ve dönme problemleri sinüs-kosinüs-tanjant oranlarıyla çözülür.",
+        concept: "Dik üçgende sin=karşı/hipotenüs, cos=komşu/hipotenüs, tan=karşı/komşu.",
+        rules: "tan=sin/cos; sin²+cos²=1. Özel değerler: sin30=1/2, sin45=√2/2, sin90=1.",
+        visual: "3-4-5 üçgeninde açıya göre karşı=3, komşu=4 ise sin=3/5, cos=4/5, tan=3/4.",
+        example1A: "3-4-5 üçgeninde sinθ?\nYöntem A: karşı/hipotenüs=3/5.",
+        example1B: "Aynı — Yöntem B: hipotenüsü Pisagor’la √(9+16)=5 bul, sonra 3/5.",
+        example2: "cosθ=4/5, θ dar. sin²=1−16/25=9/25 → sin=3/5.",
+        example3: "8 m merdiven 30° açı: sin30=h/8 → h=4 m.",
+        pitfalls: "Karşı/komşu seçimi verilen açıya bağlıdır. Hesap makinesinde derece/radyan modunu kontrol et.",
+        recap: "Özet: istenen ve bilinen kenar çiftine göre sin/cos/tan seç.",
+      );
+    case "4.4":
+      return const LessonBlueprint(
+        useCase: "Dik olmayan üçgenlerde arazi ölçümü ve navigasyon için sinüs/kosinüs kuralları kullanılır.",
+        concept: "Sinüs kuralı karşılıklı kenar-açı çiftlerini, kosinüs kuralı iki kenar ve aradaki açıyı bağlar.",
+        rules: "a/sinA=b/sinB=c/sinC. c²=a²+b²−2ab cosC. C=90° olursa Pisagor çıkar.",
+        visual: "Her kenarı karşı açısıyla eşleştir: a↔A, b↔B, c↔C.",
+        example1A: "a=5,b=7,C=60. c?\nYöntem A — Kosinüs: c²=25+49−70·1/2=39 → c=√39.",
+        example1B: "Aynı — Yöntem B, bileşen/yükseklik: 7cos60=3,5; 7sin60=7√3/2. Pisagorla c²=39.",
+        example2: "A=30,a=4,B=45. b=4·sin45/sin30=4√2.",
+        example3: "3,4,5 üçgende en büyük açı: cosC=(9+16−25)/(24)=0 → C=90°.",
+        pitfalls: "Sinüs kuralında kenar-karşı açı eşleştirmesini, kosinüste aradaki açıyı doğru seç.",
+        recap: "Özet: karşılıklı çift varsa sinüs; iki kenar+aradaki açı veya üç kenar varsa kosinüs.",
+      );
+    case "4.5":
+      return const LessonBlueprint(
+        useCase: "Periyodik hareket ve dalgalarda belirli trigonometrik değeri veren tüm açıları bulmak gerekir.",
+        concept: "Sin, cos ve tan periyodiktir. Temel açıdan simetri ve periyotla diğer çözümler bulunur.",
+        rules: "sin: x=α veya 180−α (+360k). cos: x=±α+360k. tan: x=α+180k.",
+        visual: "Birim çemberde sin y-koordinatı, cos x-koordinatıdır; aynı koordinatı paylaşan birden fazla açı olabilir.",
+        example1A: "0≤x<360, 2sinx=1.\nYöntem A: sinx=1/2; birim çemberde 30° ve 150°.",
+        example1B: "Aynı — Yöntem B: α=30; x=α ve 180−α → 30,150.",
+        example2: "cosx=−√2/2 → referans 45°, 2. ve 3. bölge → 135,225.",
+        example3: "tanx=1 → 45° +180°k → aralıkta 45,225.",
+        pitfalls: "Referans açıyı bulup tek çözümde kalma. Tan periyodu 180°, sin/cos 360°.",
+        recap: "Özet: ifadeyi yalnız bırak → referans açı → doğru bölgeler → periyot → aralık filtresi.",
+      );
+    case "5.1":
+      return const LessonBlueprint(
+        useCase: "Paralel yollar, mimari çizimler ve geometri ispatlarında açı ilişkileri kullanılır.",
+        concept: "Ters açılar eşit; doğrusal komşu açılar toplamı 180°. Paralel doğrularda yöndeş ve iç ters açılar eşittir.",
+        rules: "Tam açı 360, doğru açı 180, dik açı 90. Paralelde aynı yandaki iç açılar toplamı 180.",
+        visual: "Bir dar açı 50° ise ters açı 50°, doğrusal komşu 130° olur; paralellik bu deseni diğer kesişime taşır.",
+        example1A: "Yöndeş açı 65°.\nYöntem A: paralelde yöndeşler eşit → 65°.",
+        example1B: "Aynı — Yöntem B: 65’in komşusu 115; ters/iç ters zinciriyle diğer dar açı yeniden 65.",
+        example2: "Doğrusal çift 3x ve x+20: 4x+20=180 → x=40; açılar 120,60.",
+        example3: "Aynı yandaki iç açı 112 → diğeri 68.",
+        pitfalls: "Şekle bakıp ölçü tahmin etme; paralellik verilmediyse yöndeş eşitliği kullanma.",
+        recap: "Özet: ters=e, doğrusal=180, paralelde yöndeş/iç ters=eşit, aynı yan iç=180.",
+      );
+    case "5.2":
+      return const LessonBlueprint(
+        useCase: "Desen, kaplama ve mimari çokgenlerde açı toplamı kuralları kullanılır.",
+        concept: "n kenarlı çokgen bir köşeden n−2 üçgene ayrılır; iç açı toplamı (n−2)180°.",
+        rules: "Düzgün çokgende bir iç açı toplam/n. Dış açı toplamı 360°. Düzgün dış açı=360/n.",
+        visual: "Altıgeni bir köşeden 4 üçgene böl → 4·180=720.",
+        example1A: "Altıgen iç toplam?\nYöntem A: (6−2)180=720.",
+        example1B: "Aynı — Yöntem B: 4 üçgen·180=720.",
+        example2: "Düzgün sekizgen bir iç açı: (6·180)/8=135°.",
+        example3: "Düzgün çokgende dış açı 24° → n=360/24=15.",
+        pitfalls: "İç açı toplamını n·180 sanma. 'Düzgün' değilse tüm açılar eşit değildir.",
+        recap: "Özet: iç toplam (n−2)180; dış toplam her zaman 360.",
+      );
+    case "5.3":
+      return const LessonBlueprint(
+        useCase: "Tekerlek, saat, boru ve dönme problemleri çember-daire formüllerine dayanır.",
+        concept: "Çember sınır, daire iç bölgedir. Çap=2r, çevre=2πr, alan=πr².",
+        rules: "Yay=(merkez açı/360)·2πr. Dilim alanı=(merkez açı/360)·πr².",
+        visual: "90° tam turun 1/4’üdür; yay ve dilim alanı da tam değerin 1/4’ü olur.",
+        example1A: "r=6, 90° yay.\nYöntem A: 90/360·12π=3π.",
+        example1B: "Aynı — Yöntem B: çevre 12π, çeyrek tur → 12π/4=3π.",
+        example2: "r=5 alan → 25π.",
+        example3: "Çevre 20π: 2πr=20π → r=10.",
+        pitfalls: "Çap verilirse r=d/2. Alan ve çevre formüllerini karıştırma.",
+        recap: "Özet: tam çember formülünü bil; parça sorularında açı/360 oranıyla çarp.",
+      );
+    case "5.4":
+      return const LessonBlueprint(
+        useCase: "Depo kapasitesi, kutu hacmi ve yüzey kaplama miktarı katı cisimlerle hesaplanır.",
+        concept: "Hacim 3 boyutlu miktar, yüzey alanı dış yüzlerin toplamıdır. Alan birimi kare, hacim birimi küptür.",
+        rules: "Prizma V=taban alanı·h. Küp a³. Silindir πr²h. Koni (1/3)πr²h. Küre (4/3)πr³.",
+        visual: "Prizmayı üst üste dizilmiş eş tabanlı ince katmanlar gibi düşün: taban alanı × yükseklik.",
+        example1A: "3×4×5 prizma.\nYöntem A: V=3·4·5=60.",
+        example1B: "Aynı — Yöntem B: taban 3·4=12, 5 katman → 60.",
+        example2: "r=3,h=4 silindir → V=π·9·4=36π.",
+        example3: "Ayrıt 5 küp yüzey alanı: 6·25=150.",
+        pitfalls: "Alan cm², hacim cm³. Koni hacmindeki 1/3’ü unutma.",
+        recap: "Özet: prizma/silindir taban×yükseklik; birim kontrolü hata yakalar.",
+      );
+    case "6.1":
+      return const LessonBlueprint(
+        useCase: "Not, gelir ve spor verilerini birkaç sayı ile özetlemek için ortalama-medyan-mod kullanılır.",
+        concept: "Ortalama=toplam/adet. Medyan=sıralı verinin ortası. Mod=en sık değer. Açıklık=max−min.",
+        rules: "Aykırı değer ortalamayı güçlü etkiler, medyanı daha az etkiler. Çift veri sayısında medyan ortadaki iki değerin ortalamasıdır.",
+        visual: "2,3,3,4,20 verisinde 20 ortalamayı yukarı çeker; medyan 3 kalır.",
+        example1A: "4,6,8,10 ortalama.\nYöntem A: toplam 28 /4=7.",
+        example1B: "Aynı — Yöntem B, denge: 7’ye sapmalar −3,−1,+1,+3; toplam 0 → ortalama 7.",
+        example2: "2,4,7,9,12 medyan: sıralı 5 veri → ortadaki 7.",
+        example3: "3,3,4,5,5,5,8 mod: en sık 5.",
+        pitfalls: "Medyan öncesi sırala. Mod tek olmak zorunda değil. Aykırı değerde ortalama ile medyanı birlikte yorumla.",
+        recap: "Özet: ortalama denge, medyan orta, mod en sık, açıklık kaba yayılım.",
+      );
+    case "6.2":
+      return const LessonBlueprint(
+        useCase: "Şifre, takım seçme ve oturma düzeni gibi 'kaç farklı yol var?' soruları sayma teknikleridir.",
+        concept: "Permütasyonda sıra önemli, kombinasyonda sıra önemsiz. n!=n(n−1)...1.",
+        rules: "P(n,r)=n!/(n−r)!; C(n,r)=n!/[r!(n−r)!]. Önce 'AB ile BA farklı mı?' diye sor.",
+        visual: "A,B,C’den ikili sıralama 6; ikili grup seçimi 3’tür.",
+        example1A: "5 kişiden 2 kişi seç.\nYöntem A: C(5,2)=10.",
+        example1B: "Aynı — Yöntem B, liste: A ile 4, B ile yeni 3, C ile 2, D ile 1 → toplam 10.",
+        example2: "5 kişiden başkan+yardımcı: sıra/rol önemli → 5·4=20.",
+        example3: "4 farklı kitap rafa → 4!=24.",
+        pitfalls: "Seçim ile sıralamayı karıştırma. 0!=1. Faktöriyelleri gerektiği kadar aç.",
+        recap: "Özet: sıra önemliyse permütasyon, değilse kombinasyon.",
+      );
+    case "6.3":
+      return const LessonBlueprint(
+        useCase: "Risk, oyun, tahmin ve kalite kontrol belirsizliği olasılıkla ölçer.",
+        concept: "Eş olasılıklı durumda P(A)=istenen/tüm. Olasılık 0 ile 1 arasındadır.",
+        rules: "Tamamlayıcı P(Aᶜ)=1−P(A). Bağımsız olaylarda birlikte olma P(A∩B)=P(A)P(B).",
+        visual: "Zarda örnek uzay 1-6; çift olay {2,4,6} → 3/6=1/2.",
+        example1A: "İki zar toplamı 7.\nYöntem A: 36 çift; uygun 6 → 1/6.",
+        example1B: "Aynı — Yöntem B: 6×6 tablo çiz; toplam 7 hücreleri çapraz 6 tane → 1/6.",
+        example2: "Zarda 6 gelmemesi: 1−1/6=5/6.",
+        example3: "Para iki kez, iki yazı: 1/2·1/2=1/4.",
+        pitfalls: "'ve' ile 'veya' aynı değildir. Eş olasılık ve bağımsızlık varsayımlarını kontrol et.",
+        recap: "Özet: örnek uzay → istenen olay → uygun kural; tamamlayıcı çoğu soruyu kısaltır.",
+      );
+    case "6.4":
+      return const LessonBlueprint(
+        useCase: "Haber, ekonomi ve bilimde grafik/tablodan doğru sonuç çıkarmak veri yorumlamadır.",
+        concept: "Başlık, eksen, birim ve ölçek okunmadan yorum yapılmaz. Mutlak fark ile yüzde fark ayrıdır.",
+        rules: "Mutlak değişim=yeni−eski. Yüzde değişim=(yeni−eski)/eski·100. Korelasyon neden-sonuç değildir.",
+        visual: "Y ekseni sıfırdan başlamıyorsa küçük farklar görselde çok büyük görünebilir.",
+        example1A: "80’den 100’e satış.\nYöntem A: mutlak artış 20.",
+        example1B: "Aynı veri — Yöntem B, yüzde: 20/80=0,25 → %25.",
+        example2: "A=50,B=75. Fark 25; B, A’dan %50 fazla.",
+        example3: "Çizgi yükseliyor ama eğim azalıyor: değer artmaya devam ederken artış hızı yavaşlıyor olabilir.",
+        pitfalls: "Eksen ölçeğini, birimi ve başlangıç noktasını kontrol et. Korelasyonu nedensellik diye sunma.",
+        recap: "Özet: başlık → eksen → birim → ölçek → trend → sayısal hesap.",
+      );
+    default:
+      return LessonBlueprint(
+        useCase: t.title + ' konusu gerçek hayattaki problemleri matematik diline çevirmek ve sonraki konuları öğrenmek için kullanılır.',
+        concept: t.title + ' için önce tanımları ve sembollerin ne söylediğini kuracağız; amaç formülü ezberlemek değil, hangi durumda neden kullanıldığını anlamaktır.',
+        rules: 'Temel kuralları koşullarıyla birlikte öğren. Her formülde hangi büyüklüğün bilindiğini ve hangisinin arandığını önce belirle.',
+        visual: 'Kavramı sayı doğrusu, şekil, tablo veya grafik üzerinde düşün. Değişken değiştiğinde sonucun nasıl değiştiğini gözlemle.',
+        example1A: 'Örnek 1 — Yöntem A\n1) Verilenleri yaz.\n2) İsteneni belirle.\n3) Uygun kuralı seç.\n4) İşlemi adım adım yap.\n5) Sonucu kontrol et.',
+        example1B: 'Aynı örnek — Yöntem B\nSoruyu alternatif bir temsil ile çöz: ters işlem, tablo, grafik veya farklı formül. İki yöntemin aynı sonuca neden ulaştığını karşılaştır.',
+        example2: 'Örnek 2\nYeni sayılarla benzer yapıyı uygula. Gereksiz bilgiyi ayır, işlem sırasını koru ve sonucu başlangıç koşullarıyla doğrula.',
+        example3: 'Örnek 3\nSınav tipi bir soruda önce koşulu oku, sonra yöntemi seç. İşaret, parantez ve birim kontrolünü çözüm sonunda yap.',
+        pitfalls: 'En sık hata, soruyu tam anlamadan formül seçmektir. Tanım koşulu, işaret, parantez ve birimleri mutlaka kontrol et.',
+        recap: 'Tanım → kural → görsel ilişki → iki yöntemli örnek → yeni örnekler → hata kontrolü. Şimdi soru çözme aşamasına geçmeye hazırsın.',
+      );
+  }
+}
+
+List<LessonStep> lessonFor(Topic t) {
+  final b = blueprintFor(t);
   return [
-    LessonStep('1 — Bu Ne İşe Yarar?','🎯 ' + t.title + ' konusu gerçek hayattaki problem çözme, sınav sorularını yorumlama ve sonraki matematik konularını öğrenme için bir araçtır. Önce “neden”ini anlayacağız.','💡'),
-    LessonStep('2 — En Basit Hali',t.title + ' konusunu önce sembolsüz bir fikir olarak düşün. Amaç ezberlemek değil, hangi durumda hangi düşünceyi kullanacağını fark etmektir.','🧠'),
-    LessonStep('3 — Görselle Anlayalım','Şekilleri, sayı doğrusunu veya grafiği hareket ettirerek değişimin sonucunu gözlemle. Görsel hafıza, kuralı daha kalıcı hâle getirir.','🎨'),
-    LessonStep('4 — Adım Adım Çözüm','İlk örnekte problemi küçük parçalara ayır: verilenleri belirle, isteneni söyle, uygun kuralı seç, işlemi uygula ve sonucu kontrol et. Her adımın nedenini kendine söyle.','🪜'),
-    LessonStep('5 — Peki Ya Şimdi?','⚠️ En sık hata, kuralı soruyu anlamadan uygulamaktır. Önce koşulları oku, sonra işlemi seç. Yanlış çözüm ile doğru çözümü karşılaştır.','⚠️'),
-    LessonStep('6 — Senin Sıran','Kolay → Orta → Zor üç soru ile konuyu sınayacaksın. Yanlışta Tekrar Dene → İpucu → Adım Adım Çöz sırası kullanılacak.','🎯'),
-    LessonStep('7 — Bunu Biliyor muydun?',t.title + ' fikri matematiğin farklı dönemlerinde farklı ihtiyaçlardan doğmuş ve bugün bilim, mühendislik, ekonomi veya veri analizinde kullanılmaya devam etmektedir.','🏛️'),
+    LessonStep('1 — Nerede Kullanılır?', b.useCase, '🌍'),
+    LessonStep('2 — Temel Mantık ve Tanımlar', b.concept, '🧠'),
+    LessonStep('3 — Kurallar ve Formüller', b.rules, '📐'),
+    LessonStep('4 — Görselle Anlayalım', b.visual, '🎨'),
+    LessonStep('5 — Örnek 1 · Yöntem A', b.example1A, '🪜'),
+    LessonStep('6 — Aynı Örnek · Yöntem B', b.example1B, '🔁'),
+    LessonStep('7 — Örnek 2 · Adım Adım', b.example2, '✍️'),
+    LessonStep('8 — Örnek 3 · Pekiştirme', b.example3, '🧩'),
+    LessonStep('9 — Sık Yapılan Hatalar', b.pitfalls, '⚠️'),
+    LessonStep('10 — Mini Özet ve Kontrol', b.recap, '✅'),
+    const LessonStep(
+      '11 — Şimdi Sen Çöz',
+      'Konu anlatımı ve çözümlü örnekler tamamlandı. Şimdi 5 soru çözeceksin. Sorular kolaydan zora ilerleyecek. Yanlışta önce tekrar dene, sonra ipucu al, en son adım adım çözümü aç. 5 soruyu tamamlayınca konu bitmiş sayılacak.',
+      '🎯',
+    ),
   ];
 }
 
@@ -782,7 +1321,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(children: [
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < lesson.length; i++)
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -808,20 +1347,32 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                   child: Text(summary ? item.body.split('\n').first : body, style: const TextStyle(fontSize: 17, height: 1.65)),
                 ),
               ).animate(key: ValueKey(step)).fadeIn(duration: 300.ms).slideX(begin: .04),
-              if (step == 2) ...[
+              if (step == 3) ...[
                 const SizedBox(height: 12),
                 VisualLesson(topicId: topic.id),
               ],
-              if (step == 3 && topic.id == '1.3') ...[
-                const SizedBox(height: 14),
-                Center(child: Math.tex(r'2^4 = 2 \times 2 \times 2 \times 2 = 16', textStyle: const TextStyle(fontSize: 20))),
-              ],
-              if (step == 5) ...[
-                const SizedBox(height: 16),
-                FilledButton.icon(
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => PracticeScreen(topicId: topic.id, limit: 3))),
-                  icon: const Icon(Icons.play_arrow),
-                  label: const Padding(padding: EdgeInsets.all(14), child: Text('3 Soruluk Pratiği Başlat')),
+              if (step >= 4 && step <= 7) ...[
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: blue.withOpacity(.08),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: blue.withOpacity(.22)),
+                  ),
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.tips_and_updates_outlined, color: orange),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          'Her adımın sonunda “Bunu neden yaptım?” diye sor. Çözümü okuduktan sonra ekrana bakmadan aynı örneği bir kez daha çöz.',
+                          style: TextStyle(height: 1.45, color: Colors.white70),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
               const SizedBox(height: 16),
@@ -845,20 +1396,45 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                 flex: 2,
                 child: FilledButton(
                   onPressed: () async {
-                    if (step < 6) {
+                    if (step < lesson.length - 1) {
                       setState(() => step++);
                     } else {
-                      await ref.read(appStateProvider).completeTopic(topic.id);
-                      if (context.mounted) {
-                        showDialog(context: context, builder: (_) => AlertDialog(
-                          title: const Text('🎉 Konu tamamlandı!'),
-                          content: const Text('+50 XP kazandın. Bir sonraki konuya geçebilir veya pratik yapabilirsin.'),
-                          actions: [TextButton(onPressed: () { Navigator.pop(context); Navigator.pop(context); }, child: const Text('Harika'))],
-                        ));
+                      final finishedPractice = await Navigator.push<bool>(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => PracticeScreen(topicId: topic.id, limit: 5),
+                        ),
+                      );
+                      if (finishedPractice == true) {
+                        await ref.read(appStateProvider).completeTopic(topic.id);
+                        if (context.mounted) {
+                          await showDialog(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                              title: const Text('🎉 Konu tamamlandı!'),
+                              content: const Text('Ayrıntılı anlatım, çözümlü örnekler ve 5 soruluk uygulama tamamlandı. +50 XP kazandın.'),
+                              actions: [
+                                FilledButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Harika'),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
                       }
                     }
                   },
-                  child: Padding(padding: const EdgeInsets.all(14), child: Text(step < 6 ? 'Devam' : 'Konuyu Tamamla', style: const TextStyle(fontWeight: FontWeight.w900))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Text(
+                      step < lesson.length - 1 ? 'Devam' : '5 Soru Çözerek Bitir',
+                      style: const TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
                 ),
               ),
             ]),
@@ -972,7 +1548,12 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text('Pratik Modu', style: TextStyle(fontWeight: FontWeight.w900)),
+        title: Text(
+          widget.limit == null
+              ? 'Pratik Modu'
+              : 'Pratik · ' + math.min(solved + 1, widget.limit!).toString() + '/' + widget.limit!.toString(),
+          style: const TextStyle(fontWeight: FontWeight.w900),
+        ),
         actions: [
           IconButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ScratchScreen())), icon: const Icon(Icons.draw)),
         ],
@@ -1067,7 +1648,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
                         onPressed: () {
                           solved++;
                           if (widget.limit != null && solved >= widget.limit!) {
-                            Navigator.pop(context);
+                            Navigator.pop(context, true);
                             return;
                           }
                           setState(() {
